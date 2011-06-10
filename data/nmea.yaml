@@ -1,0 +1,49 @@
+GGA:
+    - UTC: utc
+    - Lat: lat
+    - Lon: lon
+    - FixQual: fixqual
+    - NumSat: r
+    - HDop: r
+    - Alt: [{Value: r}, {Unit: du}]
+    - GeoSep: [{Value: r}, {Unit: du}]
+    - DGPS: [{Age: ro}, {RefID: ro}]
+GLL:
+    - Lat: lat
+    - Lon: lon
+    - UTC: utc
+    - GPSStat: gpsstat
+    - FixKind?: fixkind
+GSA:
+    - FixMode: fixmode
+    - FixType: fixtype
+    - PRN: [{'1': ro}, {'2': ro}, {'3': ro}, {'4': ro}, {'5': ro}, {'6': ro}, {'7': ro}, {'8': ro}, {'9': ro}, {'10': ro}, {'11': ro}, {'12': ro}]
+    - PDop: r
+    - HDop: r
+    - VDop: r
+GSV:
+    - NumSent: r
+    - CurrNum: r
+    - NumSat: r
+    - Data:
+        - '1': [{PRN: ro}, {Elevation: ro}, {Azimuth: ro}, {SNR: ro}]
+        - '2': [{PRN: ro}, {Elevation: ro}, {Azimuth: ro}, {SNR: ro}]
+        - '3': [{PRN: ro}, {Elevation: ro}, {Azimuth: ro}, {SNR: ro}]
+        - '4': [{PRN: ro}, {Elevation: ro}, {Azimuth: ro}, {SNR: ro}]
+RMC:
+    - UTC: utc
+    - GPSStat: gpsstat
+    - Lat: lat
+    - Lon: lon
+    - SOG: r
+    - COG: r
+    - Date: r
+    - MagVar: [{Value: ro}, {Dir: ewo}]
+    - FixKind?: fixkind
+VTG:
+    - COG: [{Value: r}, {Ref: mt}]
+    - MagVar: [{Value: ro}, {Ref: mt}]
+    - SOG1: [{Value: ro}, {Unit: su}]
+    - SOG2: [{Value: ro}, {Unit: su}]
+    - FixKind?: fixkind
+
