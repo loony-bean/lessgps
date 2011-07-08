@@ -3,7 +3,7 @@ LessGPS
 
 This is a Python library for parsing [NNEA][1] (GPS currently) sentences. It was inspired 
 by Tim Savage [Python NMEA Tolkit][2] but made more friendly and easily configurable by using
-[PyParsing][3] library and [YAML][4] description files for NMEA sentences.
+[Pyparsing][3] library and [YAML][4] description files for NMEA sentences.
 
 Introduction
 ------------
@@ -28,14 +28,15 @@ There is a ton of NMEA sentences, many of them are proprietary, but there is a l
 set of elements, like *lat*, *lon*, *utc*, that form every single message. This is a
 core of LessGPS grammar, and it is defined in internal *grammar_factory* class of
 *grammar.py*. Then, for convenience, it is possible to make named groups of grammar
-elements.
+elements and give names to particular elements.
 
 ### Configuration ###
 
-Before the parser can start working, you shoul privide it with the grammar YAML file.
+Before the parser can start working, you should provide it with grammar YAML file.
 The basic grammar is provided in *lessgps/data/nmea.yaml*. You should populate it 
-with any sentences you also need, and than pass the filepath to Parser constructor.
-Everything in the YAML file is very staightforward, for example:
+with any sentences you need, and than pass the file path to Parser constructor.
+Everything in the YAML file is very staightforward, for example lets see the
+definition of GLL:
 
     GLL:
       - Lat: lat
@@ -45,7 +46,7 @@ Everything in the YAML file is very staightforward, for example:
       - FixKind?: fixkind
 
 This defines GLL sentense that consists from *lat*, *lon*, *utc*, *gpsstat* grammar elements
-and optional *fixkind* (added in 2.3 version of NMEA protocol). After parsing this 'GLL'
+and optional *fixkind* (added in 2.3 version of NMEA protocol). After parsing this GLL
 string will be translated into python dictionary with keys 'Lat', 'Lon', 'UTC',
 'GPSStat' and 'FixKind' accordingly.
 
